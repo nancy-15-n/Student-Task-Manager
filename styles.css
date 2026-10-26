@@ -1,0 +1,257 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#f4f6fb;
+    color:#263247;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    padding:20px;
+    transition:background .2s, color .2s;
+}
+
+.container{
+    width:min(700px, 100%);
+    background:white;
+    padding:25px;
+    border-radius:12px;
+    box-shadow:0 12px 35px rgba(27,43,68,.12);
+    transition:background .2s;
+}
+
+h1{
+    text-align:center;
+    margin-bottom:20px;
+    color:#263247;
+}
+
+.input-section{
+    display:flex;
+    gap:10px;
+}
+
+.input-section input,
+.input-section select,
+.search-section input,
+#deadline{
+    min-width:0;
+    padding:10px;
+    border:1px solid #d8dfeb;
+    border-radius:6px;
+    background:white;
+    color:inherit;
+}
+
+.input-section input,
+.input-section select{
+    flex:1;
+}
+
+button{
+    transition:background .15s, transform .15s, box-shadow .15s;
+}
+
+button:hover{
+    transform:translateY(-1px);
+}
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible{
+    outline:3px solid rgba(0,123,255,.28);
+    outline-offset:2px;
+}
+
+.input-section button{
+    padding:10px 18px;
+    background:#0878e8;
+    color:white;
+    border:none;
+    cursor:pointer;
+    border-radius:5px;
+}
+
+.input-section button:hover{
+    background:#0562c0;
+}
+
+.search-section{
+    margin-top:15px;
+}
+
+.search-section input{
+    width:100%;
+}
+
+.filter-section{
+    margin-top:15px;
+    display:flex;
+    gap:10px;
+}
+
+.filter-section button{
+    padding:8px 15px;
+    cursor:pointer;
+    border:1px solid #d7e1ef;
+    background:#f3f6fb;
+    color:#34445d;
+    border-radius:5px;
+}
+
+.filter-section button:hover,
+.filter-section button.active{
+    background:#0878e8;
+    color:white;
+    border-color:#0878e8;
+}
+
+#deadline{
+    margin-top:15px;
+    cursor:pointer;
+}
+
+#themeToggle{
+    margin-left:8px;
+    padding:9px 13px;
+    cursor:pointer;
+    border:0;
+    border-radius:5px;
+    background:#263247;
+    color:white;
+}
+
+ul{
+    margin-top:20px;
+    list-style:none;
+}
+
+li{
+    background:#f8f9fc;
+    margin-bottom:10px;
+    padding:12px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:12px;
+    border:1px solid #edf0f5;
+    border-radius:8px;
+    animation:appear .18s ease-out;
+}
+
+.completed{
+    text-decoration:line-through;
+    color:#8792a3;
+}
+
+.task-info{
+    flex:1;
+    min-width:0;
+    overflow-wrap:anywhere;
+}
+
+.priority{
+    font-size:12px;
+    margin-left:10px;
+    color:#d84242;
+}
+
+.priority-medium{
+    color:#b87900;
+}
+
+.priority-low{
+    color:#23834a;
+}
+
+.deadline{
+    display:block;
+    margin-top:5px;
+    color:#778398;
+    font-size:12px;
+    text-decoration:none;
+}
+
+.actions{
+    display:flex;
+    flex-shrink:0;
+}
+
+.actions button{
+    margin-left:5px;
+    border:none;
+    padding:8px;
+    cursor:pointer;
+    border-radius:4px;
+    color:white;
+}
+
+.completeBtn{
+    background:#23834a;
+}
+
+.editBtn{
+    background:#61748f;
+}
+
+.deleteBtn{
+    background:#d94343;
+}
+
+.dark-mode{
+    background:#141b27;
+    color:#e5eaf2;
+}
+
+.dark-mode .container{
+    background:#202a39;
+}
+
+.dark-mode h1{
+    color:#f0f4fa;
+}
+
+.dark-mode input,
+.dark-mode select{
+    background:#182231;
+    border-color:#3b485b;
+    color:#e5eaf2;
+}
+
+.dark-mode li{
+    background:#182231;
+    border-color:#344155;
+}
+
+.dark-mode .filter-section button{
+    background:#303d50;
+    border-color:#46546a;
+    color:#e5eaf2;
+}
+
+.dark-mode .filter-section button:hover,
+.dark-mode .filter-section button.active{
+    background:#0878e8;
+    border-color:#0878e8;
+    color:white;
+}
+
+@keyframes appear{
+    from{opacity:0; transform:translateY(4px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+@media (max-width:520px){
+    body{padding:12px;}
+    .container{padding:18px;}
+    .input-section{flex-wrap:wrap;}
+    .input-section input{flex-basis:100%;}
+    .input-section select{min-width:100px;}
+    .filter-section{gap:6px;}
+    .filter-section button{flex:1; padding:8px 5px;}
+}
